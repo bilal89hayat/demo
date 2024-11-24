@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/transfer/"
+           xmlns:tns="http://www.example.com/transfer/"
+           elementFormDefault="qualified">
+
+    <xs:element name="GetEchoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AGENT_CODE" type="xs:string"/>
+                <xs:element name="USER_ID" type="xs:string"/>
+                <xs:element name="AGENT_SESSION_ID" type="xs:string"/>
+                <xs:element name="SIGNATURE" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetEchoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CODE" type="xs:string"/>
+                <xs:element name="MESSAGE" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAgentListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AGENT_CODE" type="xs:string"/>
+                <xs:element name="USER_ID" type="xs:string"/>
+                <xs:element name="AGENT_SESSION_ID" type="xs:string"/>
+                <xs:element name="PAYMENTTYPE" type="xs:string"/>
+                <xs:element name="PAYOUT_COUNTRY" type="xs:string"/>
+                <xs:element name="SIGNATURE" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAgentListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="GetAgentListResult">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Return_AGENTLIST">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="CODE" type="xs:string"/>
+                                        <xs:element name="AGENT_SESSION_ID" type="xs:string"/>
+                                        <xs:element name="MESSAGE" type="xs:string"/>
+                                        <xs:element name="LOCATIONID" type="xs:string"/>
+                                        <xs:element name="AGENT" type="xs:string"/>
+                                        <xs:element name="BRANCH" type="xs:string"/>
+                                        <xs:element name="ADDRESS" type="xs:string"/>
+                                        <xs:element name="CITY" type="xs:string"/>
+                                        <xs:element name="CURRENCY" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
